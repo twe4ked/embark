@@ -15,3 +15,9 @@ Then set your browser home page to point to the `_site/index.html` file.
 ### Customising
 
 Edit the files in the `_data/` directory and rebuild the site.
+
+### TODO
+
+- Recent Twitter favourites
+- Recent Gists
+- Make it pretty
