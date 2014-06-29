@@ -1,0 +1,2 @@
+- name: freshrc search
+  url: https://github.com/search?o=desc&q=path%3Afreshrc+fresh&s=indexed&type=Code

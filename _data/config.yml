@@ -1,0 +1,18 @@
+- type: Search
+  items:
+    - name: Google
+      id: google
+      query_url: https://www.google.com.au/#q=
+      focus: true
+    - name: Gems
+      id: rubygems
+      query_url: https://rubygems.org/search?utf8=✓&query=
+- type: Jump
+  items:
+    - name: Gem
+      id: rubygems
+      query_url: https://rubygems.org/gems/
+    - name: Github
+      id: github
+      query_url: https://github.com/
+      default: twe4ked/

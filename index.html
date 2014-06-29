@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<h1>Embark</h1>
+
+{% for type in site.data.config %}
+  <strong>{{ type.type }}</strong>
+  <ol>
+    {% for item in type.items %}
+    <li>
+      <form id="{{ type.type | downcase }}_{{ item.id }}">
+        <label>{{ item.name }}</label>
+        <input value="{{ item.default }}"/>
+      </form>
+    </li>
+    {% endfor %}
+  </ol>
+{% endfor %}
+
+<strong>Links</strong>
+<ol>
+  {% for link in site.data.links %}
+    <li>
+      <a href={{ link.url }}>{{ link.name }}</a>
+    </li>
+  {% endfor %}
+</ol>
+
+<script>
+    {% for type in site.data.config %}
+      {% for item in type.items %}
+        $('#{{ type.type | downcase }}_{{ item.id }}').on('submit', function(event) {
+          window.location = "{{ item.query_url }}" + $(this).find('input').val()
+          event.preventDefault()
+        });
+
+        {% if item.focus %}
+          $('#{{ type.type | downcase }}_{{ item.id }} input').focus();
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  });
+</script>
